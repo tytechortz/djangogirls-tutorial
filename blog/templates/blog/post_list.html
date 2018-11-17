@@ -5,19 +5,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Django Girls Blog</a>a></h1>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 17.11.2018, 12:15</p>
-            <h2><a href="">My first post</a></h2>
-            <p>asdfsfl sf sdf  sdf sdf s</p>
-        </div>
-
-        <div>
-            <p>published: 17.11.2018, 12:45</p>
-            <h2><a href="">My secend post</a></h2>
-            <p> asdfsdf  asdfs  words</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
